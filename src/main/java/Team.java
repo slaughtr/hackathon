@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class Team {
   private String mName;
-  public static ArrayList<Team> teamsArray = new ArrayList<Team>();
+  private static ArrayList<Team> teamsArray = new ArrayList<Team>();
   private int mId;
 
   public Team(String name) {
