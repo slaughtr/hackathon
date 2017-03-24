@@ -9,14 +9,22 @@ public class TeamTest {
   }
 
   @Test
-  public void team_InstantiatesCorrectly_true() {
+  public void team_instantiatesCorrectly_true() {
     Team testTeam = new Team("test");
     assertTrue(testTeam instanceof Team);
   }
 
   @Test
-  public void team_SetsNameCorrectly_true() {
+  public void team_setsNameCorrectly_true() {
     Team testTeam = new Team("test");
     assertTrue(testTeam.getTeamName().equals("test"));
+  }
+
+  @Test
+  public void team_addsObjectsToArrayListProperly_true() {
+    Team testTeam = new Team("spider");
+    Team testTeam2 = new Team("dude");
+    assertTrue(Team.getAllTeams().get(0) == testTeam);
+    assertTrue(Team.getAllTeams().get(1) == testTeam2);
   }
 }

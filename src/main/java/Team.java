@@ -7,6 +7,7 @@ public class Team {
 
   public Team(String name) {
     mName = name;
+    teamsArray.add(this);
   }
 
   public String getTeamName() {
@@ -15,6 +16,10 @@ public class Team {
 
   public static void clearTeamArray() {
     teamsArray.clear();
+  }
+
+  public static List<Team> getAllTeams() {
+    return teamsArray;
   }
 
 }
