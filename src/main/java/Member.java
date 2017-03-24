@@ -11,7 +11,7 @@ public class Member {
     mName = name;
     memberArray.add(this);
     mId = memberArray.size();
-    memberSkills = new ArrayList<String>;
+    memberSkills = new ArrayList<String>();
   }
 
   public String getMemberName() {
@@ -28,7 +28,7 @@ public class Member {
 
   public void setMemberSkills(String skills) {
     String[] splitSkills = skills.split(",");
-    foreach(String skill : splitSkills) {
+    for (String skill : splitSkills) {
       memberSkills.add(skill);
     }
   }
