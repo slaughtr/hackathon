@@ -9,6 +9,35 @@ public class App {
     staticFileLocation("/public");
     String layout = "templates/layout.vtl";
 
+    //testing
+      Team testTeamA = new Team("Test A");
+      Team testTeamB = new Team("Test B");
+      Team testTeamC = new Team("Test C");
+      Member testMemberA = new Member("Test 1");
+      Member testMemberB = new Member("Test 2");
+      Member testMemberC = new Member("Test 3");
+      Member testMemberD = new Member("Test 4");
+      Member testMemberE = new Member("Test 5");
+      Member testMemberF = new Member("Test 6");
+      Member testMemberG = new Member("Test 7");
+      Member testMemberH = new Member("Test 8");
+      Member testMemberI = new Member("Test 9");
+      Member testMemberJ = new Member("No team");
+      testMemberA.setMemberSkills("test,test2,test3");
+      testMemberD.setMemberSkills("test,test2,test3");
+      testMemberF.setMemberSkills("test,test2,test3");
+      testMemberI.setMemberSkills("test,test2,test3");
+      testMemberC.setMemberSkills("test,test2,test3");
+      testTeamA.addMemberToTeam(testMemberA);
+      testTeamA.addMemberToTeam(testMemberB);
+      testTeamB.addMemberToTeam(testMemberC);
+      testTeamB.addMemberToTeam(testMemberD);
+      testTeamB.addMemberToTeam(testMemberE);
+      testTeamC.addMemberToTeam(testMemberF);
+      testTeamC.addMemberToTeam(testMemberG);
+      testTeamC.addMemberToTeam(testMemberH);
+      testTeamA.addMemberToTeam(testMemberI);
+
     get("/", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("template", "templates/index.vtl");
@@ -18,6 +47,7 @@ public class App {
     get("/teams", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("teams", Team.getAllTeams());
+      model.put("members", Member.getAllMembers());
       model.put("template", "templates/teams.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
