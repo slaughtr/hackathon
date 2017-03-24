@@ -16,6 +16,7 @@ _This is a site for a fictional hackathon. It provides basic information about t
 * _Clone the repository_
 * _Run the command 'gradle run'_
 * _Open browser and go to localhost:4567_
+* _Or, simply view at https://damp-scrubland-68080.herokuapp.com/_
 
 ### License
 
