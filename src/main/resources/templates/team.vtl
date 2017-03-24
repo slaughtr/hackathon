@@ -8,8 +8,6 @@
    <li>$member.memberName()</li>
   #end
 </ul>
-
-<p>No members in this team, click below to add one.</p>
 <!-- crafty bit ayyyy -->
 <form action="/teams/$team.getTeamId()/members/new" method="post">
   <input id="teamId" name="teamId" type="hidden" value="$team.getTeamId()">
