@@ -21,16 +21,16 @@ public class MemberTest {
   }
 
   @Test
-  public void member_addAllObjectsToArrayList() {
+  public void member_addAllObjectsToArrayList_true() {
     Member testMember = new Member("Test Erson");
     Member testMember2 = new Member("Spider Dude");
-    assertEquals(testMember, Member.getAllMembers().get(0));
+    assertTrue(Member.getAllMembers().get(0) == testMember);
   }
 
   @Test
-  public void member_eachObjectAssignedIdCorrectly() {
+  public void member_eachObjectAssignedIdCorrectly_test() {
     Member testMember = new Member("Test Erson");
-    assertEquals(testMember.getMemberId(), 1);
+    assertTrue(testMember.getMemberId() == 1);
   }
 
 }
