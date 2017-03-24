@@ -5,11 +5,13 @@ public class Member {
   private String mName;
   private static ArrayList<Member> memberArray = new ArrayList<Member>();
   private int mId;
+  private ArrayList<String> memberSkills;
 
   public Member(String name) {
     mName = name;
     memberArray.add(this);
     mId = memberArray.size();
+    memberSkills = new ArrayList<String>;
   }
 
   public String getMemberName() {
@@ -20,9 +22,16 @@ public class Member {
     return mId;
   }
 
+  public ArrayList<String> getMemberSkills() {
+    return memberSkills;
+  }
 
-
-
+  public void setMemberSkills(String skills) {
+    String[] splitSkills = skills.split(",");
+    foreach(String skill : splitSkills) {
+      memberSkills.add(skill);
+    }
+  }
 
   public static void clearMemberArray() {
     memberArray.clear();

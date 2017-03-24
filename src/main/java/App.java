@@ -23,31 +23,31 @@ public class App {
 
     get("/teams/new", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      model.put("template", "templates/index.vtl");
+      model.put("template", "templates/newTeamForm.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
     post("/teams", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      model.put("template", "templates/index.vtl");
+      model.put("template", "templates/teams.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
     get("/teams/:id/members", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      model.put("template", "templates/index.vtl");
+      model.put("template", "templates/teamMembers.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
     get("/teams/:id/members/new", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      model.put("template", "templates/index.vtl");
+      model.put("template", "templates/newMemberForm.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
     post("/teams/:id/members", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      model.put("template", "templates/index.vtl");
+      model.put("template", "templates/teamMembers.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 

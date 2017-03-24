@@ -30,13 +30,6 @@ public class Team {
     mMembers.add(member);
   }
 
-
-
-
-
-
-
-
   public static void clearTeamArray() {
     teamsArray.clear();
   }
