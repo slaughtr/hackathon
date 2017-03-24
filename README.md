@@ -1,26 +1,21 @@
-# _hackathon_
+# _Hackathon_
 
-#### _hackathon, 03-24-2017_
+#### _Hackathon, 03-24-2017_
 
 #### By _**Dallas Slaughter**_
 
 ## Description
-_Example text for the description of the project_
-
+_This is a site for a fictional hackathon. It provides basic information about the hackathon, and a way for event coordinators to create teams and assign members to them. It also allows coordinators to set certain skills for members for ease of assignment._
 
 ## Specifications
 
-| Behavior                   | Input Example     | Output Example    |
-| -------------------------- | -----------------:| -----------------:|
-
-
+![bdd](bdd.png)
 
 ## Setup/Installation Requirements
 
 * _Clone the repository_
 * _Run the command 'gradle run'_
 * _Open browser and go to localhost:4567_
-
 
 ### License
 
