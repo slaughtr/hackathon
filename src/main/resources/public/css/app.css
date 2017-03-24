@@ -1,0 +1,17 @@
+html {
+  background: black;
+  color: white;
+}
+
+p {
+  word-wrap: normal;
+  width: 70%;
+}
+
+body {
+  width: 90%;
+}
+
+input {
+  width: 250px;
+}
