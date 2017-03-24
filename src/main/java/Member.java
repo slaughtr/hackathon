@@ -41,4 +41,7 @@ public class Member {
     return memberArray;
   }
 
+  public static Member findMemberIndex(int idNum) {
+    return memberArray.get(idNum - 1);
+  }
 }
