@@ -9,11 +9,19 @@ public class Member {
   public Member(String name) {
     mName = name;
     memberArray.add(this);
+    mId = memberArray.size();
   }
 
   public String getMemberName() {
     return mName;
   }
+
+  public int getMemberId() {
+    return mId;
+  }
+
+
+
 
 
   public static void clearMemberArray() {
