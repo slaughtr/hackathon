@@ -27,4 +27,10 @@ public class TeamTest {
     assertTrue(Team.getAllTeams().get(0) == testTeam);
     assertTrue(Team.getAllTeams().get(1) == testTeam2);
   }
+
+  @Test
+  public void team_setsIdCorrectly_True() {
+    Team testTeam = new Team("test");
+    assertTrue(testTeam.getTeamId() == 1);
+  }
 }
