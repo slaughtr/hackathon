@@ -1,0 +1,14 @@
+<!--teamMembers.vtl-->
+<h1>Member list for team $team.getTeamName()</h1>
+
+#if ($members)
+  <ul>
+    #foreach ($member in $members)
+      <li><a href="/members/$member.getMemberId()">$member.getMemberName()</a></li>
+    #end
+  </ul>
+#else
+  <p>No members in this team, <a href="/teams/$team.getTeamId()/members/new">go add one</a>.</p>
+#end
+
+<!--teamMembers.vtl-->

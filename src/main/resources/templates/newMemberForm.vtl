@@ -1,0 +1,21 @@
+<!--newMemberForm.vtl-->
+<link href="../css/simple-sidebar.css" rel="stylesheet">
+
+<h1>Add a member to $team.getName()</h1>
+
+<form action="/teams/$team.getTeamId()/members" method="post">
+  <input id="teamId" name="teamId" type="hidden" value="$team.getId()">
+
+  <div class="form-group">
+    <label for="memberName">Member name</label>
+    <input id="memberName" name="memberName" type="text" class="form-control">
+  </div>
+
+  <!-- <div class="form-group">
+    <label for="memberSkills">Member skill</label>
+    <input id="memberSkills" name="memberSkills" type="text" class="form-control">
+  </div> -->
+
+  <button type="submit" class="btn btn-success">Add Member</button>
+</form>
+<!--newMemberForm.vtl-->

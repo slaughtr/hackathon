@@ -1,0 +1,16 @@
+<!--allMembers.vtl-->
+<link href="../css/simple-sidebar.css" rel="stylesheet">
+<h1>All members</h1>
+
+#if ($members)
+  <ul>
+    #foreach ($member in $members)
+      <li><a href="/members/$member.getId()">$member.getMemberName()</a></li>
+      <li>-$member.getMemberSkills()</li>
+    #end
+  </ul>
+#else
+  <p>No members, how sad!</p>
+#end
+
+<!--allMembers.vtl-->

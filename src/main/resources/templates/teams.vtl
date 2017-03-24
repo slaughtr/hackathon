@@ -1,0 +1,18 @@
+<!--teams.vtl-->
+<h1>All teams</h1>
+  <ul>
+    #foreach ($team in $teams)
+      <li><a href="/teams/$team.getTeamId()">$team.getTeamName()</a></li>
+        <ul>
+          #foreach ($member in $team.getAllMembers())
+          <li>$member.getMemberName()</li>
+          <ul>
+            #foreach ($skill in $member.getMemberSkills())
+            <li>$skill</li>
+            #end
+          </ul>
+          #end
+    #end
+  </ul>
+  <p><a href="/teams/new">Add a team.</a></p>
+<!--teams.vtl-->
