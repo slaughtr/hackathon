@@ -1,4 +1,6 @@
 <!--teamMembers.vtl-->
+<link href="../css/simple-sidebar.css" rel="stylesheet">
+
 <h1>Member list for team $team.getTeamName()</h1>
 
 #if ($members)
@@ -8,7 +10,13 @@
     #end
   </ul>
 #else
-  <p>No members in this team, <a href="/teams/$team.getTeamId()/members/new">go add one</a>.</p>
+  <p>No members in this team, click below to add one.</p>
 #end
+
+<!-- crafty bit ayyyy -->
+<form action="/teams/$team.getTeamId()/members/new" method="post">
+  <input id="teamId" name="teamId" type="hidden" value="$team.getTeamId()">
+  <button type="submit" class="btn btn-success">Add Member</button>
+</form>
 
 <!--teamMembers.vtl-->

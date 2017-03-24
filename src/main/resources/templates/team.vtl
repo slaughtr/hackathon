@@ -1,10 +1,16 @@
 <!--team.vtl-->
 <link href="../css/simple-sidebar.css" rel="stylesheet">
 <h1>$team.getTeamName() members:</h1>
-
 <ul>
   #foreach($member in $team.getAllMembers())
    <li>$member.memberName()</li>
   #end
 </ul>
+
+<p>No members in this team, click below to add one.</p>
+<!-- crafty bit ayyyy -->
+<form action="/teams/$team.getTeamId()/members/new" method="post">
+  <input id="teamId" name="teamId" type="hidden" value="$team.getTeamId()">
+  <button type="submit" class="btn btn-success">Add Member</button>
+</form>
 <!--team.vtl-->

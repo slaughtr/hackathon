@@ -1,7 +1,7 @@
 <!--newMemberForm.vtl-->
 <link href="../css/simple-sidebar.css" rel="stylesheet">
 
-<h1>Add a member to $team.getName()</h1>
+<h1>Add a member to $team.getTeamName()</h1>
 
 <form action="/teams/$team.getTeamId()/members" method="post">
   <input id="teamId" name="teamId" type="hidden" value="$team.getId()">
