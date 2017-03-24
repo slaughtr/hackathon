@@ -32,25 +32,42 @@ public class App {
       Map<String, Object> model = new HashMap<String, Object>();
       String teamName = request.queryParams("teamName");
       Team newTeam = new Team(teamName);
+      model.put("teams", Team.getAllTeams());
       model.put("template", "templates/teams.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    get("/teams/:id/members", (request, response) -> {
+    get("/teams/:teamId/members", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
+      Team thisTeam = Team.findTeamIndex(Integer.parseInt(request.params(":teamId")));
+      model.put("team", thisTeam);
       model.put("template", "templates/teamMembers.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
     get("/teams/:id/members/new", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
+      Team thisTeam = Team.findTeamIndex(Integer.parseInt(request.params(":teamId")));
+      model.put("team", thisTeam);
       model.put("template", "templates/newMemberForm.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    post("/teams/:id/members", (request, response) -> {
+    post("/teams/:teamId/members", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
+      Team thisTeam = Team.findTeamIndex(Integer.parseInt(request.params(":teamId")));
+      String memberName = request.queryParams("memberName");
+      Member newMember = new Member(memberName);
+      thisTeam.addMemberToTeam(newMember);
+      model.put("team", thisTeam);
       model.put("template", "templates/teamMembers.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/all-members", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("members", Member.getAllMembers());
+      model.put("template", "templates/allMembers.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 

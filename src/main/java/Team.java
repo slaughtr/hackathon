@@ -38,4 +38,8 @@ public class Team {
     return teamsArray;
   }
 
+  public static Team findTeamIndex(int idNum) {
+    return teamsArray.get(idNum - 1);
+  }
+
 }
