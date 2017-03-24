@@ -5,11 +5,13 @@ public class Team {
   private String mName;
   private static ArrayList<Team> teamsArray = new ArrayList<Team>();
   private int mId;
+  private ArrayList<Member> mMembers;
 
   public Team(String name) {
     mName = name;
     teamsArray.add(this);
     mId = teamsArray.size();
+    mMembers = new ArrayList<Member>();
   }
 
   public String getTeamName() {
@@ -20,7 +22,13 @@ public class Team {
     return mId;
   }
 
+  public ArrayList<Member> getMembersOfTeam() {
+    return mMembers;
+  }
 
+  public void addMemberToTeam(Member member) {
+    mMembers.add(member);
+  }
 
 
 

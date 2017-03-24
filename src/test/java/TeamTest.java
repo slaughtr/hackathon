@@ -29,8 +29,17 @@ public class TeamTest {
   }
 
   @Test
-  public void team_setsIdCorrectly_True() {
+  public void team_setsIdCorrectly_true() {
     Team testTeam = new Team("test");
     assertTrue(testTeam.getTeamId() == 1);
+  }
+
+  @Test
+  public void team_setsMemberToTeamList_true() {
+    Team testTeam = new Team("test");
+    Member testMember = new Member("Spider Dude");
+    Member failMember = new Member("Not here");
+    testTeam.addMemberToTeam(testMember);
+    assertTrue(testTeam.getMembersOfTeam().contains(testMember));
   }
 }
