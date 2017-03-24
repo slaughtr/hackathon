@@ -123,14 +123,9 @@ public class App {
 
     get("/info", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      model.put("template", "templates/info .vtl");
+      model.put("template", "templates/info.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    get("/resources", (request, response) -> {
-      Map<String, Object> model = new HashMap<String, Object>();
-      model.put("template", "templates/resources.vtl");
-      return new ModelAndView(model, layout);
-    }, new VelocityTemplateEngine());
   }
 }
