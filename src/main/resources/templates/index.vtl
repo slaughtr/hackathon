@@ -11,101 +11,19 @@
   <span terminal=1 class="terminal-line">
     Welcome to Privathon.
   <br /><br />
-    This is a site to find out more about Privathon, the social media privacy hackathon.
+    Welcome to Privathon, the social media privacy hackathon.
   <br /><br />
     We invite people to change the way we view social media, by putting an emphasis on accountable code and personal privacy.
     <br /><br /><br />
     Sorry Zuckerburg.
     <br /><br />
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+    We intend to upend the way people think about social media. Instead of code hiding behind obfuscation, we shall open our source. Instead of taking it as accepted that your info will be sold, we shall be not-for-profit. Instead of having your information changed via complex algorithims for the use of advertising, we shall let the community to decide. So, are you ready to join us in making the next flop of a social media site?
   </span>
 </div>
 
-<script> //couldn't get it to load by srcing the file, even though it was shown as sourced in chrome. super weird.
+<script> //couldn't get it to load by srcing the file, even though it was shown as sourced in chrome. super weird. Minified for the sake of lines.
 // TERMINAL TYPING CODE BY STEVE DEKORTE
-
-function getAllElementsWithAttribute(attribute)
-{
-  var matchingElements = [];
-
-  var allElements = document.getElementsByTagName('span');
-
-  for (var i = 0, n = allElements.length; i < n; i++)
-  {
-    if (allElements[i].getAttribute(attribute))
-    {
-      matchingElements.push(allElements[i]);
-    }
-  }
-  return matchingElements;
-}
-
-var terminalElements = getAllElementsWithAttribute("terminal");
-
-function terminals_init()
-{
-  var elements = terminalElements;
-  for (var i = 0; i < elements.length; i++)
-  {
-    var e = elements[i]
-    e.completeHTML = e.innerHTML
-    e.innerHTML = ""
-    e.i = 0
-  }
-
-}
-
-function terminals_start()
-{
-  terminals_next()
-}
-
-function terminals_next()
-{
-  var done = true
-  var elements = terminalElements;
-
-  for (var i = 0; i < elements.length && done == true; i++)
-  {
-    var e = elements[i]
-
-    e.i ++
-
-    if (e.innerHTML.length >= e.completeHTML.length)
-    {
-      e.innerHTML = e.completeHTML
-    }
-    else
-    {
-      var s =  e.completeHTML.substring(0, e.i)
-
-      if (s.slice(-1) == " ")
-      {
-        if(e.innerHTML.length % 6 == 0 ) { s = s + "" } else { s = s + "|" }
-      }
-      else
-      {
-        s = s + "|"
-      }
-
-      e.innerHTML = s
-      e.parentNode.style.display = 'none'
-      e.parentNode.style.display = 'block'
-      done = false
-    }
-  }
-
-  if (!done)
-  {
-    //window.clearInterval(terminalIntervalFunction)
-    setTimeout(terminals_next, 800/20)
-  }
-}
-
-terminals_init()
-
-window.onload = function() { terminals_start() };
-
+function getAllElementsWithAttribute(e){for(var t=[],n=document.getElementsByTagName("span"),i=0,l=n.length;l>i;i++)n[i].getAttribute(e)&&t.push(n[i]);return t}function terminals_init(){for(var e=terminalElements,t=0;t<e.length;t++){var n=e[t];n.completeHTML=n.innerHTML,n.innerHTML="",n.i=0}}function terminals_start(){terminals_next()}function terminals_next(){for(var e=!0,t=terminalElements,n=0;n<t.length&&1==e;n++){var i=t[n];if(i.i++,i.innerHTML.length>=i.completeHTML.length)i.innerHTML=i.completeHTML;else{var l=i.completeHTML.substring(0,i.i);l+=" "==l.slice(-1)&&i.innerHTML.length%6==0?"":"|",i.innerHTML=l,i.parentNode.style.display="none",i.parentNode.style.display="block",e=!1}}e||setTimeout(terminals_next,40)}var terminalElements=getAllElementsWithAttribute("terminal");terminals_init(),window.onload=function(){terminals_start()};
 </script>
 
 <!--index.vtl-->
