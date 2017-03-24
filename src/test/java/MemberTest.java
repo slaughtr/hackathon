@@ -28,9 +28,16 @@ public class MemberTest {
   }
 
   @Test
-  public void member_eachObjectAssignedIdCorrectly_test() {
+  public void member_eachObjectAssignedIdCorrectly_true() {
     Member testMember = new Member("Test Erson");
     assertTrue(testMember.getMemberId() == 1);
+  }
+
+  @Test
+  public void member_skillsAssignedAndSplitCorrectly_true() {
+    Member testMember = new Member("Spider Dude");
+    testMember.setMemberSkills("jump,crawl,eat");
+    assertTrue(testMember.getMemberSkills().contains("jump") && testMember.getMemberSkills().contains("crawl") && testMember.getMemberSkills().contains("eat"));
   }
 
 }
